@@ -1,0 +1,21 @@
+{
+  "name": "umbrella/admin",
+  "autoload": {
+    "psr-4": {
+      "Umbrella\\Admin\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "nicolasloison13",
+      "email": "nicolasloison13@icloud.com",
+      "role": "Developer"
+    },
+    {
+      "name": "maudelin.delescaut",
+      "email": "maudelin.delescaut@jobtrek.ch",
+      "role": "Developer"
+    }
+  ],
+  "require": {}
+}
