@@ -16,7 +16,7 @@ $temperature_in_celsius = round($temperature - 273.15);
 
 // main et description
 $temperature_current_weather = $weather_data['weather'][0]['main'];
-$temperature_current_weather_description = $weather_data ['weather'][0]['description'];
+$temperature_current_weather_description = $weather_data['weather'][0]['description'];
 
 // icon
 $temperature_current_weather_icon = $weather_data['weather'][0]['icon'];
