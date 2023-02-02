@@ -17,5 +17,7 @@
       "role": "Developer"
     }
   ],
-  "require": {}
+  "require": {
+    "vlucas/phpdotenv": "^5.5"
+  }
 }
