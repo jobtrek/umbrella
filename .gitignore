@@ -1,2 +1,6 @@
 /vendor/
 .env
+/public/main.css
+node_modules
+composer.lock
+package-lock.json
