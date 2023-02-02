@@ -2,7 +2,7 @@
 require "../vendor/autoload.php";
 
 $api_key = $_ENV['OPEN_WEATHER_API_KEY'];
-$city_name = "Lausanne";
+$city_name = "Paris";
 
 
 $api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' . $city_name . '&appid=' . $api_key;
