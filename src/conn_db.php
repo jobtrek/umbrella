@@ -37,12 +37,10 @@ $activity = $stmt->fetchAll(\PDO::FETCH_CLASS, \Activity::class);*/
 
 
 
-$stmt = $con->query( 'SELECT t_activity.name_activity,activity_id FROM t_activity INNER JOIN t_weather ON t_activity INNER join ');
+$stmt = $con->query( 'SELECT t_activity.name_activity FROM t_activity INNER JOIN t_activity_weather ON t_activity_weather.weather_id = t_activity.activity_id INNER JOIN t_weather ON t_activity_weather.weather_id = t_weather.weather_id');
 $activity = $stmt->fetchAll(\PDO::FETCH_CLASS, \Activity::class);
 
-print_r($weather);
 print_r($activity);
-var_dump($temperature_current_weather);
 
 
 
