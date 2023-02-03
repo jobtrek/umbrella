@@ -22,7 +22,7 @@ require "../src/conn_api.php";
 </head>
 
 <body>
-<div class="navbar bg-base-100">
+<div class="navbar bg-primary">
     <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
 </div>
 </body>
