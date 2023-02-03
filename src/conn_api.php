@@ -2,15 +2,14 @@
 require "../vendor/autoload.php";
 
 $api_key = $_ENV['OPEN_WEATHER_API_KEY'];
-$city_name = "Lausanne";
+$city_name = "Barcelone";
 
 
 $api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' . $city_name . '&appid=' . $api_key;
 
 
 $weather_data = json_decode(file_get_contents($api_url), true);
-echo '<pre>';
-print_r($weather_data);
+
 
 
 // temperature + fahrenheit to celsius
@@ -40,3 +39,5 @@ $temperature_current_clouds = $weather_data['clouds']['all'];
 // icon
 $temperature_current_weather_icon = $weather_data['weather'][0]['icon'];
 $affichage_icon = "<img src='http://openweathermap.org/img/wn/" . $temperature_current_weather_icon . "@2x.png' />";
+
+
