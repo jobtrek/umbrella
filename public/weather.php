@@ -23,10 +23,14 @@ require "../src/conn_api.php";
 
 <body>
 
- <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
+<h1 class="text-3xl font-bold underline">
+    Hello world!
+</h1>
 
+<p> La température actuelle à <?= $city_name; ?> est de <?= $temperature_in_celsius; ?> degrés celsius. </p>
+<p> <?= $temperature_current_weather; ?> </p>
+<p> <?= $affichage_icon ?> </p>
+<p> description : <?= $temperature_current_weather_description; ?> </p>
 
 
 </body>
