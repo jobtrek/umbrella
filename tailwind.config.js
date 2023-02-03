@@ -1,11 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./public/**/*.{php,js}"],
+
   theme: {
 
     extend: {},
 
   },
+
   daisyui: {
     themes: [
       {
@@ -29,8 +31,10 @@ module.exports = {
 
           "error": "#F87272",
         },
+
       },
     ],
   },
   plugins: [require("daisyui")],
+
 }
