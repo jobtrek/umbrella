@@ -22,13 +22,9 @@ require "../src/conn_api.php";
 </head>
 
 <body>
-
- <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
-
-
-
+<div class="navbar bg-base-100">
+    <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+</div>
 </body>
 
 </html>
