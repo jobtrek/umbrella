@@ -17,13 +17,19 @@ require "../src/conn_api.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
     <title>Umbrella</title>
 </head>
 
 <body>
-<div class="navbar bg-primary text-primary-content">
-    <a class="btn btn-ghost normal-case text-xl">dhfghdfghg</a>
+<div class="navbar bg-primary">
+    <div class="flex-none">
+        <button class="btn btn-square btn-ghost">
+            <img src="./images/logo-image.png" alt="">        </button>
+    </div>
+    <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">Umbrella</a>
+    </div>
 </div>
 </body>
 
