@@ -9,8 +9,6 @@ $api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' . $city_name . '&
 
 
 $weather_data = json_decode(file_get_contents($api_url), true);
-echo '<pre>';
-print_r($weather_data);
 
 
 // temperature + fahrenheit to celsius
