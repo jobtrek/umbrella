@@ -23,8 +23,14 @@ require "../src/conn_api.php";
 </head>
 
 <body>
-<div class="navbar bg-primary text-primary-content">
-    <a class="btn btn-ghost normal-case text-xl">dhfghdfghg</a>
+<div class="navbar bg-primary">
+    <div class="flex-none">
+        <button class="btn btn-square btn-ghost">
+            <img src="./images/logo-image.png" alt="">        </button>
+    </div>
+    <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl">Umbrella</a>
+    </div>
 </div>
 </body>
 
