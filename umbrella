@@ -1,0 +1,1048 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.1
+-- Dumped by pg_dump version 15.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: t_activity; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_activity (
+    activity_id integer NOT NULL,
+    name_activity character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.t_activity OWNER TO postgres;
+
+--
+-- Name: t_activity_activity_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.t_activity_activity_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.t_activity_activity_id_seq OWNER TO postgres;
+
+--
+-- Name: t_activity_activity_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.t_activity_activity_id_seq OWNED BY public.t_activity.activity_id;
+
+
+--
+-- Name: t_activity_environ; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_activity_environ (
+    environ_id integer NOT NULL,
+    activity_id integer NOT NULL
+);
+
+
+ALTER TABLE public.t_activity_environ OWNER TO postgres;
+
+--
+-- Name: t_activity_season; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_activity_season (
+    season_id integer NOT NULL,
+    activity_id integer NOT NULL
+);
+
+
+ALTER TABLE public.t_activity_season OWNER TO postgres;
+
+--
+-- Name: t_activity_temperature; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_activity_temperature (
+    temp_id integer NOT NULL,
+    activity_id integer NOT NULL
+);
+
+
+ALTER TABLE public.t_activity_temperature OWNER TO postgres;
+
+--
+-- Name: t_activity_weather; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_activity_weather (
+    weather_id integer NOT NULL,
+    activity_id integer NOT NULL,
+    score integer
+);
+
+
+ALTER TABLE public.t_activity_weather OWNER TO postgres;
+
+--
+-- Name: t_environ; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_environ (
+    environ_id integer NOT NULL,
+    environ_name character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.t_environ OWNER TO postgres;
+
+--
+-- Name: t_environ_environ_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.t_environ_environ_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.t_environ_environ_id_seq OWNER TO postgres;
+
+--
+-- Name: t_environ_environ_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.t_environ_environ_id_seq OWNED BY public.t_environ.environ_id;
+
+
+--
+-- Name: t_season; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_season (
+    season_id integer NOT NULL,
+    season_name character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.t_season OWNER TO postgres;
+
+--
+-- Name: t_season_season_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.t_season_season_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.t_season_season_id_seq OWNER TO postgres;
+
+--
+-- Name: t_season_season_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.t_season_season_id_seq OWNED BY public.t_season.season_id;
+
+
+--
+-- Name: t_temperature; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_temperature (
+    temp_id integer NOT NULL,
+    temp_name character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.t_temperature OWNER TO postgres;
+
+--
+-- Name: t_temperature_temp_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.t_temperature_temp_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.t_temperature_temp_id_seq OWNER TO postgres;
+
+--
+-- Name: t_temperature_temp_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.t_temperature_temp_id_seq OWNED BY public.t_temperature.temp_id;
+
+
+--
+-- Name: t_weather; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.t_weather (
+    weather_id integer NOT NULL,
+    name_weather character varying(30) NOT NULL
+);
+
+
+ALTER TABLE public.t_weather OWNER TO postgres;
+
+--
+-- Name: t_weather_weather_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.t_weather_weather_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.t_weather_weather_id_seq OWNER TO postgres;
+
+--
+-- Name: t_weather_weather_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.t_weather_weather_id_seq OWNED BY public.t_weather.weather_id;
+
+
+--
+-- Name: t_activity activity_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity ALTER COLUMN activity_id SET DEFAULT nextval('public.t_activity_activity_id_seq'::regclass);
+
+
+--
+-- Name: t_environ environ_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_environ ALTER COLUMN environ_id SET DEFAULT nextval('public.t_environ_environ_id_seq'::regclass);
+
+
+--
+-- Name: t_season season_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_season ALTER COLUMN season_id SET DEFAULT nextval('public.t_season_season_id_seq'::regclass);
+
+
+--
+-- Name: t_temperature temp_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_temperature ALTER COLUMN temp_id SET DEFAULT nextval('public.t_temperature_temp_id_seq'::regclass);
+
+
+--
+-- Name: t_weather weather_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_weather ALTER COLUMN weather_id SET DEFAULT nextval('public.t_weather_weather_id_seq'::regclass);
+
+
+--
+-- Data for Name: t_activity; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_activity (activity_id, name_activity) FROM stdin;
+1	Badminton
+2	Basketball
+3	Bowling
+4	Cinéma
+5	Course à pied
+6	Cyclisme
+7	Equitation
+8	Escalade
+9	Escape Game
+10	Football
+11	Hockey sur glace
+12	Laser Game
+13	Mini-Golf
+14	Musée
+15	Natation
+16	Paint-Ball
+17	Parcours
+18	Patinage
+19	Peau de Phoque 
+20	Pedalo
+21	Planche à voile
+23	Pétanque
+24	Rafting
+25	Randonnée
+26	Rugby
+27	Saut à l’ élastique
+28	Ski
+29	Ski de fond
+30	Ski nautique
+31	Snow
+32	Squash
+33	Stande de tir
+34	Surf
+35	Tennis
+36	Tennis de table
+37	Tir à l’arc
+38	Tour Hélicoptère
+39	Tranpoline
+41	Volley
+42	VTT
+43	Piscine-ext
+\.
+
+
+--
+-- Data for Name: t_activity_environ; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_activity_environ (environ_id, activity_id) FROM stdin;
+1	1
+2	1
+2	2
+1	3
+1	4
+2	5
+2	6
+2	7
+1	8
+2	8
+1	9
+2	10
+1	11
+1	12
+2	13
+1	14
+1	15
+1	16
+2	17
+1	18
+2	19
+2	20
+2	21
+2	23
+2	24
+2	25
+2	26
+2	27
+2	28
+2	29
+2	30
+2	31
+1	32
+1	33
+2	34
+2	35
+2	36
+2	37
+2	38
+1	39
+2	41
+2	42
+2	43
+\.
+
+
+--
+-- Data for Name: t_activity_season; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_activity_season (season_id, activity_id) FROM stdin;
+1	1
+2	1
+3	1
+4	1
+1	2
+2	2
+3	2
+1	3
+2	3
+3	3
+4	3
+1	4
+2	4
+3	4
+4	4
+1	5
+2	5
+3	5
+4	5
+1	6
+2	6
+3	6
+1	7
+2	7
+3	7
+1	8
+2	8
+3	8
+1	9
+2	9
+3	9
+4	9
+1	10
+2	10
+3	10
+4	11
+1	12
+2	12
+3	12
+4	12
+1	13
+2	13
+3	13
+1	14
+2	14
+3	14
+4	14
+1	15
+2	15
+3	15
+4	15
+1	16
+2	16
+3	16
+1	17
+2	17
+3	17
+4	18
+4	19
+1	20
+2	20
+2	21
+3	21
+1	23
+2	23
+3	23
+1	24
+2	24
+1	25
+2	25
+3	25
+4	25
+1	26
+2	26
+3	26
+1	27
+2	27
+3	27
+4	28
+4	29
+2	30
+3	30
+4	31
+1	32
+2	32
+3	32
+4	32
+1	33
+2	33
+3	33
+4	33
+2	34
+1	35
+2	35
+3	35
+1	36
+2	36
+3	36
+1	37
+2	37
+3	37
+1	38
+2	38
+3	38
+1	39
+2	39
+3	39
+4	39
+1	41
+2	41
+3	41
+1	42
+2	42
+3	42
+2	43
+\.
+
+
+--
+-- Data for Name: t_activity_temperature; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_activity_temperature (temp_id, activity_id) FROM stdin;
+3	1
+3	2
+3	3
+3	4
+2	4
+3	5
+3	6
+3	7
+3	8
+3	9
+2	9
+3	10
+2	11
+3	12
+2	12
+3	13
+3	14
+2	14
+3	15
+2	15
+3	16
+2	16
+3	17
+2	18
+2	19
+1	20
+3	20
+1	21
+3	21
+1	23
+3	23
+1	24
+3	24
+1	25
+3	25
+2	25
+3	26
+1	27
+3	27
+2	28
+3	28
+2	29
+3	29
+1	30
+3	30
+2	31
+3	31
+2	32
+3	32
+2	33
+3	33
+1	34
+1	35
+3	35
+1	36
+3	36
+1	37
+3	37
+1	38
+2	39
+3	39
+1	41
+3	41
+1	42
+3	42
+1	43
+3	43
+\.
+
+
+--
+-- Data for Name: t_activity_weather; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_activity_weather (weather_id, activity_id, score) FROM stdin;
+1	1	5
+2	1	5
+3	1	5
+4	1	5
+5	1	1
+1	2	1
+2	2	1
+3	2	2
+4	2	1
+5	2	5
+1	3	5
+2	3	5
+3	3	4
+4	3	4
+5	3	1
+1	4	5
+2	4	5
+3	4	5
+4	4	5
+5	4	1
+1	5	1
+2	5	2
+3	5	3
+4	5	1
+5	5	5
+1	6	1
+2	6	1
+3	6	3
+4	6	2
+5	6	5
+1	7	1
+2	7	1
+3	7	2
+4	7	2
+5	7	5
+1	8	1
+2	8	1
+3	8	1
+4	8	4
+5	8	5
+1	9	5
+2	9	5
+3	9	5
+4	9	5
+5	9	1
+1	10	5
+2	10	1
+3	10	3
+4	10	2
+5	10	5
+1	11	5
+2	11	5
+3	11	5
+4	11	5
+5	11	3
+1	12	5
+2	12	5
+3	12	5
+4	12	5
+5	12	1
+1	13	1
+2	13	1
+3	13	2
+4	13	1
+5	13	5
+1	14	5
+2	14	5
+3	14	5
+4	14	5
+5	14	1
+1	15	5
+2	15	5
+3	15	5
+4	15	5
+5	15	2
+1	16	1
+2	16	1
+3	16	2
+4	16	1
+5	16	5
+1	17	1
+2	17	1
+3	17	3
+4	17	1
+5	17	5
+1	18	5
+2	18	5
+3	18	5
+4	18	5
+5	18	2
+1	19	1
+2	19	5
+3	19	1
+4	19	1
+5	19	5
+1	20	1
+2	20	1
+3	20	2
+4	20	1
+5	20	5
+1	21	1
+2	21	1
+3	21	1
+4	21	1
+5	21	5
+1	23	1
+2	23	1
+3	23	2
+4	23	1
+5	23	5
+1	24	1
+2	24	1
+3	24	2
+4	24	2
+5	24	5
+1	25	1
+2	25	3
+3	25	3
+4	25	3
+5	25	5
+1	26	1
+2	26	1
+3	26	2
+4	26	1
+5	26	5
+1	27	1
+2	27	1
+3	27	1
+4	27	1
+5	27	5
+1	28	1
+2	28	2
+3	28	3
+4	28	1
+5	28	5
+1	29	1
+2	29	2
+3	29	3
+4	29	1
+5	29	5
+1	30	1
+2	30	1
+3	30	2
+4	30	1
+5	30	5
+1	31	1
+2	31	2
+3	31	3
+4	31	1
+5	31	5
+1	32	5
+2	32	5
+3	32	5
+4	32	5
+5	32	1
+1	33	5
+2	33	5
+3	33	5
+4	33	5
+5	33	1
+1	34	1
+2	34	1
+3	34	1
+4	34	1
+5	34	5
+1	35	1
+2	35	1
+3	35	2
+4	35	1
+5	35	5
+1	36	1
+2	36	1
+3	36	3
+4	36	1
+5	36	5
+1	37	1
+2	37	1
+3	37	2
+4	37	1
+5	37	5
+1	38	1
+2	38	1
+3	38	3
+4	38	1
+5	38	5
+1	39	5
+2	39	5
+3	39	5
+4	39	5
+5	39	1
+1	41	1
+2	41	1
+3	41	2
+4	41	1
+5	41	5
+1	42	1
+2	42	1
+3	42	3
+4	42	1
+5	42	5
+1	43	1
+2	43	1
+3	43	1
+4	43	1
+5	43	5
+\.
+
+
+--
+-- Data for Name: t_environ; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_environ (environ_id, environ_name) FROM stdin;
+1	inside
+2	outside
+\.
+
+
+--
+-- Data for Name: t_season; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_season (season_id, season_name) FROM stdin;
+1	Autumn
+2	Summmer
+3	Spring
+4	Winter
+\.
+
+
+--
+-- Data for Name: t_temperature; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_temperature (temp_id, temp_name) FROM stdin;
+1	Hot
+2	Cold
+3	Medium
+\.
+
+
+--
+-- Data for Name: t_weather; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.t_weather (weather_id, name_weather) FROM stdin;
+1	Orageux
+2	Enneigé
+3	Nuageux
+4	Pluvieux
+5	Ensoleillée
+\.
+
+
+--
+-- Name: t_activity_activity_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.t_activity_activity_id_seq', 43, true);
+
+
+--
+-- Name: t_environ_environ_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.t_environ_environ_id_seq', 2, true);
+
+
+--
+-- Name: t_season_season_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.t_season_season_id_seq', 4, true);
+
+
+--
+-- Name: t_temperature_temp_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.t_temperature_temp_id_seq', 3, true);
+
+
+--
+-- Name: t_weather_weather_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.t_weather_weather_id_seq', 5, true);
+
+
+--
+-- Name: t_activity_environ t_activity_environ_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_environ
+    ADD CONSTRAINT t_activity_environ_pkey PRIMARY KEY (environ_id, activity_id);
+
+
+--
+-- Name: t_activity t_activity_name_activity_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity
+    ADD CONSTRAINT t_activity_name_activity_key UNIQUE (name_activity);
+
+
+--
+-- Name: t_activity t_activity_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity
+    ADD CONSTRAINT t_activity_pkey PRIMARY KEY (activity_id);
+
+
+--
+-- Name: t_activity_season t_activity_season_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_season
+    ADD CONSTRAINT t_activity_season_pkey PRIMARY KEY (season_id, activity_id);
+
+
+--
+-- Name: t_activity_temperature t_activity_temperature_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_temperature
+    ADD CONSTRAINT t_activity_temperature_pkey PRIMARY KEY (temp_id, activity_id);
+
+
+--
+-- Name: t_activity_weather t_activity_weather_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_weather
+    ADD CONSTRAINT t_activity_weather_pkey PRIMARY KEY (weather_id, activity_id);
+
+
+--
+-- Name: t_environ t_environ_environ_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_environ
+    ADD CONSTRAINT t_environ_environ_name_key UNIQUE (environ_name);
+
+
+--
+-- Name: t_environ t_environ_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_environ
+    ADD CONSTRAINT t_environ_pkey PRIMARY KEY (environ_id);
+
+
+--
+-- Name: t_season t_season_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_season
+    ADD CONSTRAINT t_season_pkey PRIMARY KEY (season_id);
+
+
+--
+-- Name: t_season t_season_season_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_season
+    ADD CONSTRAINT t_season_season_name_key UNIQUE (season_name);
+
+
+--
+-- Name: t_temperature t_temperature_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_temperature
+    ADD CONSTRAINT t_temperature_pkey PRIMARY KEY (temp_id);
+
+
+--
+-- Name: t_temperature t_temperature_temp_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_temperature
+    ADD CONSTRAINT t_temperature_temp_name_key UNIQUE (temp_name);
+
+
+--
+-- Name: t_weather t_weather_name_weather_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_weather
+    ADD CONSTRAINT t_weather_name_weather_key UNIQUE (name_weather);
+
+
+--
+-- Name: t_weather t_weather_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_weather
+    ADD CONSTRAINT t_weather_pkey PRIMARY KEY (weather_id);
+
+
+--
+-- Name: t_activity_environ t_activity_environ_activity_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_environ
+    ADD CONSTRAINT t_activity_environ_activity_id_fkey FOREIGN KEY (activity_id) REFERENCES public.t_activity(activity_id);
+
+
+--
+-- Name: t_activity_environ t_activity_environ_environ_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_environ
+    ADD CONSTRAINT t_activity_environ_environ_id_fkey FOREIGN KEY (environ_id) REFERENCES public.t_environ(environ_id);
+
+
+--
+-- Name: t_activity_season t_activity_season_activity_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_season
+    ADD CONSTRAINT t_activity_season_activity_id_fkey FOREIGN KEY (activity_id) REFERENCES public.t_activity(activity_id);
+
+
+--
+-- Name: t_activity_season t_activity_season_season_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_season
+    ADD CONSTRAINT t_activity_season_season_id_fkey FOREIGN KEY (season_id) REFERENCES public.t_season(season_id);
+
+
+--
+-- Name: t_activity_temperature t_activity_temperature_activity_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_temperature
+    ADD CONSTRAINT t_activity_temperature_activity_id_fkey FOREIGN KEY (activity_id) REFERENCES public.t_activity(activity_id);
+
+
+--
+-- Name: t_activity_temperature t_activity_temperature_temp_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_temperature
+    ADD CONSTRAINT t_activity_temperature_temp_id_fkey FOREIGN KEY (temp_id) REFERENCES public.t_temperature(temp_id);
+
+
+--
+-- Name: t_activity_weather t_activity_weather_activity_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_weather
+    ADD CONSTRAINT t_activity_weather_activity_id_fkey FOREIGN KEY (activity_id) REFERENCES public.t_activity(activity_id);
+
+
+--
+-- Name: t_activity_weather t_activity_weather_weather_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.t_activity_weather
+    ADD CONSTRAINT t_activity_weather_weather_id_fkey FOREIGN KEY (weather_id) REFERENCES public.t_weather(weather_id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
