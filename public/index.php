@@ -1,5 +1,4 @@
 <?php
-
 require "../vendor/autoload.php";
 
 //pour la key of API
@@ -7,6 +6,8 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
 $dotenv->load();
 
 require "../src/conn_api.php";
+require "../src/conn_db.php";
+
 
 ?>
 
@@ -38,7 +39,6 @@ require "../src/conn_api.php";
         </div>
     </div>
 </header>
-<container>
 
     <div class="form-control">
         <h1 class="mb-10 mt-10 ml-10 text-3xl font-bold leading-none tracking-tight text-gray-900 md:text-10xl lg:text-6xl dark:text-white">
@@ -65,6 +65,7 @@ require "../src/conn_api.php";
     </div>
 
 </container>
+
 <footer class="footer items-center p-4 bg-primary text-white absolute bottom-0 ">
     <div class="items-center grid-flow-col ml-8">
         <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"

@@ -7,6 +7,7 @@ $city_name = $_GET['city'];
 $api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' . $city_name . '&appid=' . $api_key;
 
 
+
 if (array_key_exists('submit', $_GET)) {
     //check si l'input est vide
     if (!$_GET['city']) {
@@ -14,6 +15,7 @@ if (array_key_exists('submit', $_GET)) {
     }
     if ($_GET['city']) {
         $weather_data = json_decode(file_get_contents($api_url), true);
+
 
         if ($weather_data['cod'] == 200) {
 
@@ -42,6 +44,7 @@ if (array_key_exists('submit', $_GET)) {
 
 
 // icon
+
             $temperature_current_weather_icon = $weather_data['weather'][0]['icon'];
             $affichage_icon = "<img src='http://openweathermap.org/img/wn/" . $temperature_current_weather_icon . "@2x.png' />";
         }
@@ -49,4 +52,5 @@ if (array_key_exists('submit', $_GET)) {
         $error = "Le nom de la ville est invalide.";
     }
 }
+
 
