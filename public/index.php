@@ -45,7 +45,7 @@ require "../src/conn_db.php";
         Trouvez une <p>Activité avec </p>
         <p class="text-secondary">La Météo</p></h1>
 
-    <form action="index.php" method="get">
+    <form action="index.php" method="GET">
         <div class="input-group ml-10">
             <input type="text" name="city" id="city" placeholder="Search…" class="input input-bordered"
             />
