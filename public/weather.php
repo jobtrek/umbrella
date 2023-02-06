@@ -23,11 +23,6 @@ require "../src/conn_api.php";
 </head>
 
 <body>
-
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
-
 <p> La température actuelle à <?= $temperature_current_name; ?> est de <?= $temperature_in_celsius; ?> degrés
     celsius. </p>
 <p> <?= $temperature_current_weather; ?> </p>
@@ -40,8 +35,6 @@ require "../src/conn_api.php";
 <p> temp max : : <?= $temperature_max_in_celsius; ?></p>
 <p> temp min : <?= $temperature_min_in_celsius; ?></p>
 <p> ressentis : <?= $temperature_feels_in_celsius; ?></p>
-
-
 </body>
 
 </html>

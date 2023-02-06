@@ -40,25 +40,31 @@ require "../src/conn_db.php";
     </div>
 </header>
 
+    <div class="form-control">
+        <h1 class="mb-10 mt-10 ml-10 text-3xl font-bold leading-none tracking-tight text-gray-900 md:text-10xl lg:text-6xl dark:text-white">
+            Trouvez une <p>Activité avec </p>
+            <p class="text-secondary">La Météo</p></h1>
 
-<div class="form-control align-middle">
-    <h1 class="mb-10 mt-10 ml-10 text-3xl font-bold leading-none tracking-tight text-gray-900 md:text-10xl lg:text-6xl dark:text-black">
-        Trouvez une <p>Activité avec </p>
-        <p class="text-secondary">La Météo</p></h1>
-
-    <div class="input-group ml-10">
-        <label for="town-inout"></label>
-        <input id="town-inout" type="text" placeholder="Search…" class="input input-bordered"/>
-        <button class="btn btn-square bg-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-        </button>
-
+        <form action="weather.php" method="get">
+            <div class="input-group ml-10">
+                <input type="text" name="city" id="city" placeholder="Search…" class="input input-bordered"
+                       value=" <?= htmlentities($_GET['city']) ?>"/>
+                <label for="city"></label>
+                <button type="submit" name="submit" class="btn btn-square bg-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="output">
+                <?php echo $error; ?>
+            </div>
+        </form>
     </div>
-</div>
+
+</container>
 
 <footer class="footer items-center p-4 bg-primary text-white absolute bottom-0 ">
     <div class="items-center grid-flow-col ml-8">
