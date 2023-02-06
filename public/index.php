@@ -45,9 +45,10 @@ require "../src/conn_api.php";
             Trouvez une <p>Activité avec </p>
             <p class="text-secondary">La Météo</p></h1>
 
-        <form action="" method="get">
+        <form action="weather.php" method="get">
             <div class="input-group ml-10">
-                <input type="text" name="text" id="text" placeholder="Search…" class="input input-bordered"/>
+                <input type="text" name="city" id="city" placeholder="Search…" class="input input-bordered"
+                       value=" <?= htmlentities($_GET['city']) ?>"/>
                 <label for="city"></label>
                 <button type="submit" name="submit" class="btn btn-square bg-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -57,9 +58,12 @@ require "../src/conn_api.php";
                     </svg>
                 </button>
             </div>
+            <div class="output">
+                <?php echo $error; ?>
+            </div>
         </form>
     </div>
-    -add
+
 </container>
 <footer class="footer items-center p-4 bg-primary text-white absolute bottom-0 ">
     <div class="items-center grid-flow-col ml-8">
