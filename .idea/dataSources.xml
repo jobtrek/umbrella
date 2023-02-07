@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="umbrella@localhost" uuid="37b1e405-b954-45f5-a3d1-64f978a51b9f">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/umbrella</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="umbrella@localhost [2]" uuid="46ce6c57-fe88-4520-91ec-39216a159ceb">
+    <data-source source="LOCAL" name="umbrella@localhost" uuid="fa14803f-ae1b-48d5-b71b-c801ccf25e3f">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
