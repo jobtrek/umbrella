@@ -1,16 +1,14 @@
 <?php
 require "../vendor/autoload.php";
-
+require_once "conn_db.php";
 $api_key = $_ENV['OPEN_WEATHER_API_KEY'];
 $city_name = $_GET['city'] ?? null;;
 
 
 if ($city_name != null) {
 
-
     $api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' . $city_name . '&appid=' . $api_key;
-
-
+    
     if (array_key_exists('submit', $_GET)) {
         if (!empty($city_name) and $weather_data['cod'] == 200) {
             header('Location: ./weather.php?city=' . $city_name . ' ');
@@ -25,6 +23,7 @@ if ($city_name != null) {
     $weather_data = json_decode(file_get_contents($api_url), true);
 
 // temperature + fahrenheit to celsius
+
     $temperature = $weather_data['main']['temp'];
     $temperature_in_celsius = round($temperature - 273.15);
 
@@ -39,6 +38,7 @@ if ($city_name != null) {
 
 
 // data une par une
+
     $temperature_current_weather = $weather_data['weather'][0]['main'];
     $temperature_current_weather_description = $weather_data['weather'][0]['description'];
     $temperature_current_wind = $weather_data['wind']['speed'];
@@ -52,6 +52,7 @@ if ($city_name != null) {
 
     $temperature_current_weather_icon = $weather_data['weather'][0]['icon'];
     $affichage_icon = "<img src='http://openweathermap.org/img/wn/" . $temperature_current_weather_icon . "@2x.png' />";
+
 }
 
 
