@@ -33,31 +33,28 @@ require "./header.php";
             <p> ressentis : <?= $temperature_feels_in_celsius; ?></p>
         </div>
     </div>
-    <!--<p> La température actuelle à <?php /*= $temperature_current_name; */ ?> est de <?php /*= $temperature_in_celsius; */ ?> degrés
-    celsius. </p>
-<p> <?php /*= $temperature_current_weather; */ ?> </p>
-<p> <?php /*= $affichage_icon */ ?> </p>
-<p> vitesse du vent <?php /*= $temperature_current_wind */ ?> </p>
-<p> description : <?php /*= $temperature_current_weather_description; */ ?> </p>
-<p> humidity : <?php /*= $temperature_current_main_humidity; */ ?> </p>
-<p> pressure : <?php /*= $temperature_current_main_pressure; */ ?> </p>
-<p> nuages : <?php /*= $temperature_current_clouds; */ ?>%</p>
-<p> temp max : : <?php /*= $temperature_max_in_celsius; */ ?></p>
-<p> temp min : <?php /*= $temperature_min_in_celsius; */ ?></p>
-<p> ressentis : <?php /*= $temperature_feels_in_celsius; */ ?></p>-->
     <br><br>
     <div class="grid grid-cols-4 gap-4">
 
         <?php foreach ($activity as $activities) { ?>
+
             <div class="card-body ">
                 <div class="card w-96 bg-base-100 shadow-xl ">
                     <div class="card-body">
-                        <h2>id (<?= $activities->activity_id ?>) : <?= $activities->name_activity ?></h2>
+                        <h2>
+                            id : <?= $activities->activity_id ?> <br>
+                            activity : <?= $activities->name_activity ?><br>
+                            score : <?= $activities->score ?><br>
+                            season : <?= $activities->season_name ?><br>
+                            environ : <?= $activities->environ_name ?><br>
+
+                        </h2>
 
                     </div>
                 </div>
             </div>
             <br>
         <?php } ?>
+
     </div>
 <?php require "./footer.php" ?>
