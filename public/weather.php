@@ -53,6 +53,7 @@ require "./header.php";
                 <div class="card w-96 bg-base-100 shadow-xl ">
                     <div class="card-body">
                         <h2>id (<?= $activities->activity_id ?>) : <?= $activities->name_activity ?></h2>
+
                     </div>
                 </div>
             </div>
