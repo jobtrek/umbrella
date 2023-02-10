@@ -12,7 +12,7 @@
 
 <body>
 <header>
-    <div class="navbar bg-primary">
+    <div class="navbar bg-primary ">
         <div class="flex-none">
             <button class="btn btn-square btn-ghost indicator-middle ml-8">
                 <a href="index.php">

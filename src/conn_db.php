@@ -42,11 +42,10 @@ if ($city_name != null) {
     ON t_activity_temperature.activity_id = t_activity.activity_id  
 */
     WHERE t_weather.name_weather = '$temperature_current_weather' 
-    AND score > 3 
-    ORDER BY score");
+    AND score > 2 
+    ORDER BY score DESC ");
     $activity = $stmt3->fetchall(\PDO::FETCH_CLASS, Activity::class);
 }
-print_r($activity);
 
 
 
