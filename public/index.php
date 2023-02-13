@@ -11,7 +11,7 @@ require "../src/conn_db.php";
 require "./header.php";
 ?>
 
-    <div class="form-control">
+    <div class="flex justify-center form-control">
         <h1 class="mb-10 mt-10 ml-10 text-3xl font-bold leading-none tracking-tight text-gray-900 md:text-10xl lg:text-6xl dark:text-white">
             Trouvez une <p>Activité avec </p>
             <p class="text-secondary">La Météo</p></h1>
@@ -31,6 +31,8 @@ require "./header.php";
             </div>
 
         </form>
+        <video class="w-96 loop autoplay src=" .
+        /images/video%20(2).mp4"></video>
     </div>
 
 <?php require "./footer.php" ?>
