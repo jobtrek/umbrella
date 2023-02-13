@@ -36,8 +36,6 @@ AND score > 3
 
 ");
     $activity = $stmt3->fetchAll(\PDO::FETCH_CLASS, Activity::class);
-
-    print_r($activity);
 }
 
 

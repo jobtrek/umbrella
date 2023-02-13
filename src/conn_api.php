@@ -2,8 +2,7 @@
 require "../vendor/autoload.php";
 require_once "conn_db.php";
 $api_key = $_ENV['OPEN_WEATHER_API_KEY'];
-$city_name = $_GET['city'] ?? null;;
-
+$city_name = $_GET['city'] ?? null;
 
 if ($city_name != null) {
 
