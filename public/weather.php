@@ -19,21 +19,20 @@ require "./header.php";
         <p> <?= $affichage_icon ?> </p>
 
         <div class="card-body">
-            <p><?= $temperature_in_celsius ?> ° </p>
+            <p><?= $temperature ?> ° </p>
             <p><?= $temperature_current_name; ?></p>
-            <p> <?= $temperature_current_weather; ?> </p>
+            <p> <?= $temperature_current_weather_description; ?> </p>
         </div>
 
         <div class="card-body bg-gradient-to-r from-indigo-200">
 
-            <p> vitesse du vent <?= $temperature_current_wind ?> </p>
-            <p> description : <?= $temperature_current_weather_description; ?> </p>
-            <p> humidity : <?= $temperature_current_main_humidity; ?> </p>
+            <p> vitesse du vent <?= $temperature_current_wind ?> km/h </p>
+            <p> humidity : <?= $temperature_current_main_humidity; ?> % </p>
             <p> pressure : <?= $temperature_current_main_pressure; ?> </p>
             <p> nuages : <?= $temperature_current_clouds; ?>%</p>
-            <p> temp max : : <?= $temperature_max_in_celsius; ?></p>
-            <p> temp min : <?= $temperature_min_in_celsius; ?></p>
-            <p> ressentis : <?= $temperature_feels_in_celsius; ?></p>
+            <p> temp max : <?= $temperature_max; ?> ° </p>
+            <p> temp min : <?= $temperature_min; ?> °</p>
+            <p> ressentis : <?= $temperature_feels; ?> ° </p>
         </div>
     </div>
     <br><br>
