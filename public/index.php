@@ -31,8 +31,6 @@ require "./header.php";
             </div>
 
         </form>
-        <video class="w-96 loop autoplay src=" .
-        /images/video%20(2).mp4"></video>
     </div>
 
 <?php require "./footer.php" ?>
