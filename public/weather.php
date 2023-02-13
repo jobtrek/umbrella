@@ -48,7 +48,6 @@ require "./header.php";
                             id : <?= $activities->activity_id ?> <br>
                             activity : <?= $activities->name_activity ?><br>
                             score : <?= $activities->score ?><br>
-                            season : <?= $activities->season_name ?><br>
                             environ : <?= $activities->environ_name ?><br>
 
                         </h2>
