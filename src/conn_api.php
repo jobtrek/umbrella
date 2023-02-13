@@ -8,7 +8,7 @@ $city_name = $_GET['city'] ?? null;;
 if ($city_name != null) {
 
     $api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' . $city_name . '&appid=' . $api_key;
-    
+
     if (array_key_exists('submit', $_GET)) {
         if (!empty($city_name) and $weather_data['cod'] == 200) {
             header('Location: ./weather.php?city=' . $city_name . ' ');
@@ -28,10 +28,10 @@ if ($city_name != null) {
     $temperature_in_celsius = round($temperature - 273.15);
 
     $temperature_max = $weather_data['main']['temp_min'];
-    $temperature_max_in_celsius = round($temperature_max - 273.15);
+    $temperature_min_in_celsius = round($temperature_max - 273.15);
 
     $temperature_min = $weather_data['main']['temp_max'];
-    $temperature_min_in_celsius = round($temperature_min - 273.15);
+    $temperature_max_in_celsius = round($temperature_min - 273.15);
 
     $temperature_feels = $weather_data['main']['feels_like'];
     $temperature_feels_in_celsius = round($temperature_feels - 273.15);

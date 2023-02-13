@@ -11,14 +11,14 @@ require "../src/conn_db.php";
 require "./header.php";
 ?>
 
-    <div class="flex justify-center form-control">
-        <h1 class="mb-10 mt-10 ml-10 text-3xl font-bold leading-none tracking-tight text-gray-900 md:text-10xl lg:text-6xl dark:text-white">
+    <div class="form-control">
+        <h1 class="mb-10 mt-10 ml-10 text-3xl font-bold leading-none tracking-tight text-gray-900 md:text-10xl lg:text-6xl">
             Trouvez une <p>Activité avec </p>
             <p class="text-secondary">La Météo</p></h1>
 
         <form action="index.php" method="GET">
             <div class="input-group ml-10">
-                <input type="text" name="city" id="city" placeholder="Search…" class="input input-bordered"
+                <input type="text" name="city" id="city" placeholder="Recherche par lieu" class="input input-bordered"
                 />
                 <label for="city"></label>
                 <button type="submit" name="submit" class="btn btn-square bg-secondary">

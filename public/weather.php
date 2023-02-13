@@ -15,8 +15,11 @@ require "./header.php";
 ?>
 
     <div class="card w-96 bg-base-100 shadow-xl ml-8 mt-10">
+
         <p> <?= $affichage_icon ?> </p>
+
         <div class="card-body">
+            <p><?= $temperature_in_celsius ?> ° </p>
             <p><?= $temperature_current_name; ?></p>
             <p> <?= $temperature_current_weather; ?> </p>
         </div>
