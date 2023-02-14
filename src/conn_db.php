@@ -5,12 +5,7 @@ namespace Umbrella\Admin;
 require "../vendor/autoload.php";
 
 require "../src/conn_api.php";
-var_dump($temperature_current_weather);
 
-if ($temperature_current_weather === "Haze") {
-    $temperature_current_weather = "Clouds";
-
-}
 if ($city_name != null) {
 
 
