@@ -87,6 +87,28 @@ require "./header.php";
             <?php } ?>
         </div>
 
+        <?php for ($i = 1; $i <= 39; $i++) {
+            $dateHour = $weather_data["list"][$i]['dt_txt'];
+            $hour = explode(" ", $dateHour);
+
+            if ($hour[1] === "15:00:00") {
+                ?>
+                <div class="card-body ">
+                    <div class="card w-96 bg-base-100 shadow-xl ">
+                        <div class="card-body">
+                            <h2>
+                                <p> <?php $temperature_current_weather_icon = $weather_data["list"][$i]['weather'][0]['icon']; ?> </p>
+                                <p> <?= $affichage_icon = "<img src='http://openweathermap.org/img/wn/"
+                                        . $temperature_current_weather_icon . "@2x.png'/>"; ?> </p>
+                                <p> <?= round($weather_data["list"][$i]['main']['temp']); ?> °</p>
+                                <p> <?= $date = $weather_data["list"][$i]['dt_txt']; ?></p>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            <?php }
+        } ?>
+
         <br><br>
 
     </div>
