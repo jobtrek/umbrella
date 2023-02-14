@@ -22,6 +22,7 @@ require "./header.php";
             <p><?= $temperature ?> ° </p>
             <p><?= $temperature_current_name; ?></p>
             <p> <?= $temperature_current_weather_description; ?> </p>
+            <p> <?= $date; ?> </p>
         </div>
 
         <div class="card-body bg-gradient-to-r from-indigo-200">
@@ -35,6 +36,28 @@ require "./header.php";
             <p> ressentis : <?= $temperature_feels; ?> ° </p>
         </div>
     </div>
+
+    <div>
+        <?php for ($i = 1; $i <= 5; $i++) { ?>
+
+            <div class="card-body ">
+                <div class="card w-96 bg-base-100 shadow-xl ">
+                    <div class="card-body">
+                        <h2>
+                            <p> <?php $temperature_current_weather_icon = $weather_data["list"][$i]['weather'][0]['icon']; ?> </p>
+                            <p> <?= $affichage_icon = "<img src='http://openweathermap.org/img/wn/"
+                                    . $temperature_current_weather_icon . "@2x.png'/>"; ?>  </p>
+                            <p> <?= round($weather_data["list"][$i]['main']['temp']); ?> °</p>
+                            <p> <?= $date = $weather_data["list"][$i]['dt_txt']; ?></p>
+
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+        <?php } ?>
+    </div>
+
     <br><br>
     <div class="grid grid-cols-4 gap-4">
 

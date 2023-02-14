@@ -35,7 +35,7 @@ if ($city_name != null) {
     $temperature_current_main_pressure = $weather_data["list"][0]['main']['pressure'];
     $temperature_current_name = $weather_data['city']['name'];
     $temperature_current_clouds = $weather_data["list"][0]['clouds']['all'];
-
+    $date = $weather_data["list"][0]['dt_txt'];
 // icon
 
     $temperature_current_weather_icon = $weather_data["list"][0]['weather'][0]['icon'];
