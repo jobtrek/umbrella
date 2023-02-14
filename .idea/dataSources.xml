@@ -8,12 +8,5 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/umbrella</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="umbrella@localhost [2]" uuid="4ba169f8-95c6-4780-a11f-048a0d5e71af">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/umbrella</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
   </component>
 </project>

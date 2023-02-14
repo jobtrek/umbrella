@@ -1,4 +1,4 @@
-<footer class="footer items-center p-4 bg-primary text-white absolute ">
+<footer class="footer items-center p-4 bg-primary text-white fixed left-0 bottom-0">
     <div class="items-center grid-flow-col ml-8">
         <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
              clip-rule="evenodd" class="fill-current">

@@ -10,7 +10,7 @@
     <title>Umbrella</title>
 </head>
 
-<body>
+<body class="bg-gradient-to-t from-indigo-200">
 <header>
     <div class="navbar bg-primary ">
         <div class="flex-none">
@@ -26,3 +26,4 @@
         </div>
     </div>
 </header>
+

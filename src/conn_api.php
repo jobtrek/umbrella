@@ -42,6 +42,3 @@ if ($city_name != null) {
     $affichage_icon = "<img src='http://openweathermap.org/img/wn/" . $temperature_current_weather_icon . "@2x.png' />";
 
 }
-
-
-
