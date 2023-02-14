@@ -5,7 +5,12 @@ namespace Umbrella\Admin;
 require "../vendor/autoload.php";
 
 require "../src/conn_api.php";
+var_dump($temperature_current_weather);
 
+if ($temperature_current_weather === "Haze") {
+    $temperature_current_weather = "Clouds";
+
+}
 if ($city_name != null) {
 
 
@@ -33,9 +38,11 @@ JOIN t_environ te on te.environ_id = tae.environ_id
     WHERE tw.name_weather = '$temperature_current_weather' 
 
 AND score > 3
+ 
 ORDER BY random()
     
-LIMIT 6
+LIMIT 6 
+
 ");
     $activity = $stmt3->fetchAll(\PDO::FETCH_CLASS, Activity::class);
 }

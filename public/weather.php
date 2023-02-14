@@ -25,6 +25,7 @@ require "./header.php";
                 <div class="card-body">
                     <p><?= $temperature_in_celsius ?> ° </p>
                     <p><?= $temperature_current_name; ?></p>
+                 
                     <p> <?= $temperature_current_weather; ?> </p>
                 </div>
 
@@ -46,15 +47,16 @@ require "./header.php";
             <?php foreach ($activity as $activities) { ?>
 
                 <div class="card-body ">
-                    <h1 class="flex justify-center"><strong> <?= $activities->name_activity ?></strong></h1>
-                    <h2 class="flex justify-center"> <?= $activities->environ_name ?> </h2>
+
                     <div class="card w-80 bg-base-100 shadow-xl hover:bg-secondary/50">
+                        <h1 class="flex justify-center"><strong> <?= $activities->name_activity ?></strong></h1>
+                        <h2 class="flex justify-center"> <?= $activities->environ_name ?> </h2>
                         <div class="card-body">
                             <h2>
-                                activity : <?= $activities->name_activity ?><br>
-                                score : <?= $activities->score ?><br>
-                                environ : <?= $activities->environ_name ?><br>
+                                <?php if ($activities->score = 5) { ?>
 
+                                    <?= $activities->score ?> / 5<br>
+                                <?php } ?>
                             </h2>
 
                         </div>
