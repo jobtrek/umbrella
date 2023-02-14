@@ -22,7 +22,7 @@ if ($city_name != null) {
 
 // query for select activity with weather, season name with score > 3
 
-    $stmt3 = $con->query("SELECT (name_activity) name_activity, tae.activity_id, environ_name, score 
+    $stmt3 = $con->query("SELECT DISTINCT (random()) ,name_activity, tae.activity_id, environ_name, score 
 FROM t_activity
 JOIN t_activity_weather taw on t_activity.activity_id = taw.activity_id
 JOIN t_weather tw on tw.weather_id = taw.weather_id
