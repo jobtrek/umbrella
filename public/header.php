@@ -10,9 +10,9 @@
     <title>Umbrella</title>
 </head>
 
-<body class="bg-gradient-to-t from-indigo-200">
+<body class="h-screen">
 <header>
-    <div class="navbar bg-primary ">
+    <div class="navbar bg-primary bg-gradient-to-t  overflow-hidden">
         <div class="flex-none">
             <button class="btn btn-square btn-ghost indicator-middle ml-8">
                 <a href="index.php">
