@@ -38,8 +38,8 @@ require "./header.php";
                 </form>
             </div>
         </div>
-        <div class="video-météo w-2/4 h-2/4 items-center justify-center mr-20 ml-10 bg-base-100">
-            <video loop autoplay src="./images/video%20(2).mp4" type="video/mp4"></video>
+        <div class=" mr-40 flex w-2/5 justify-center">
+            <video loop autoplay class="object-fill" src="./images/video%20(2).mp4" type="video/mp4"></video>
         </div>
     </div>
 
