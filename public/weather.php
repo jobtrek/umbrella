@@ -128,7 +128,7 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
 
                 <?php } ?>
             </div>
-            <div class="grid grid-cols-5 gap-18 justify-items-center mb-10">
+            <div class="flex flex-row justify-center space-x-28 mb-10">
 
                 <?php for ($i = 1; $i <= 39; $i++) {
                     $datetime = $weather_data["list"][$i]['dt_txt'];
