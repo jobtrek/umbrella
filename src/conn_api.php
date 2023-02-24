@@ -13,7 +13,7 @@ if ($city_name != null) {
             header('Location: ./weather.php?city=' . $city_name . ' ');
         } else {
             header('Location: ./index.php');
-            echo "Le nom de la ville est invalide.";
+            $error = "Le nom de la ville est invalide.";
         }
     }
 

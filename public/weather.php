@@ -40,40 +40,22 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
                     <div class="card-body flex text-center ">
 
                         <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> vitesse du vent :
-                            <strong
-                                    class="flex justify-center"><?= $temperature_current_wind ?>
-                                km/h
-                            </strong>
+                            <strong class="flex justify-center"><?= $temperature_current_wind ?>km/h</strong>
                         </p>
                         <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> humidité :
-                            <strong
-                                    class="flex justify-center"><?= $temperature_current_main_humidity; ?>
-                                %
-                            </strong>
-                        </p>
-                        <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> pression :
-                            <strong class="flex justify-center"><?= $temperature_current_main_pressure; ?>
-                            </strong>
+                            <strong class="flex justify-center"><?= $temperature_current_main_humidity; ?>%</strong>
                         </p>
                         <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> nuages :
-                            <strong
-                                    class="flex justify-center"><?= $temperature_current_clouds; ?>%
-                            </strong>
+                            <strong class="flex justify-center"><?= $temperature_current_clouds; ?>%</strong>
                         </p>
                         <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> température max :
-                            <strong class="flex justify-center"> <?= $temperature_max; ?>
-                                °
-                            </strong>
+                            <strong class="flex justify-center"> <?= $temperature_max; ?>°</strong>
                         </p>
                         <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> température min :
-                            <strong class="flex justify-center"> <?= $temperature_min; ?>
-                                °
-                            </strong>
+                            <strong class="flex justify-center"> <?= $temperature_min; ?>°</strong>
                         </p>
                         <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> ressentis :
-                            <strong class="flex"> <?= $temperature_feels; ?>
-                                °
-                            </strong>
+                            <strong class="flex"> <?= $temperature_feels; ?>°</strong>
                         </p>
                     </div>
                 </div>
@@ -127,14 +109,17 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
                         <div class="card bg-base-100 shadow-xl mt-10 mb-10">
                             <div class="card-body ">
                                 <p class="mb-5">
-                                <p class="card-title text-sm mb-10 ">Aujourd'hui</p>
-                                <p><?= $date = $weather_data["list"][$i]['dt_txt']; ?></p>
+                                <p class="card-title text-sm ">Aujourd'hui</p>
+                                <?php $datetime = $weather_data["list"][$i]['dt_txt'];
+                                $date_hour = explode(" ", $datetime); ?>
+                                <p class="mb-10"><?= $date_hour[1] ?> </p>
+                                <p> <?= $date_hour[0]; ?></p>
                                 <h2>
                                     <p> <?php $temperature_current_weather_icon = $weather_data["list"][$i]['weather'][0]['icon']; ?> </p>
                                     <p class="flex justify-center"> <?= $affichage_icon = "<img src='http://openweathermap.org/img/wn/"
                                             . $temperature_current_weather_icon . "@2x.png'/>"; ?>  </p>
-                                    <p class="flex justify-center"> <?= round($weather_data["list"][$i]['main']['temp']); ?>
-                                        °</p>
+                                    <p class="flex justify-center">
+                                        <strong><?= round($weather_data["list"][$i]['main']['temp']); ?>°</strong></p>
 
                                 </h2>
                             </div>
@@ -146,14 +131,18 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
             <div class="grid grid-cols-5 gap-18 justify-items-center mb-10">
 
                 <?php for ($i = 1; $i <= 39; $i++) {
-                    $dateHour = $weather_data["list"][$i]['dt_txt'];
-                    $hour = explode(" ", $dateHour);
+                    $datetime = $weather_data["list"][$i]['dt_txt'];
+                    $date_hour = explode(" ", $datetime);
 
-                    if ($hour[1] === "15:00:00") {
+                    if ($date_hour[1] === "15:00:00") {
+
                         ?>
                         <div class="mb-10">
                             <div class="card bg-base-100 shadow-xl ">
                                 <div class="card-body bg-base-100 ">
+                                    <p class="card-title text-sm ">
+                                        <?php
+                                        ?> </p>
                                     <h2 class="flex flex-row justify-center w-40 gap-10x">
                                         <p class="card-title text-sm"> <?= $date = $weather_data["list"][$i]['dt_txt']; ?></p>
 
@@ -168,7 +157,8 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
                             </div>
 
                         </div>
-                    <?php }
+                        <?php
+                    }
                 } ?>
             </div>
         </div>
