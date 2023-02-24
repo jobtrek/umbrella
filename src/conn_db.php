@@ -32,7 +32,8 @@ JOIN t_activity_environ tae on t_activity.activity_id = tae.activity_id
 JOIN t_environ te on te.environ_id = tae.environ_id
 WHERE tw.name_weather = '$temperature_current_weather' 
 AND score > 3
- ORDER BY name_activity,random()
+ ORDER BY 
+   name_activity,random()
 LIMIT 6  
 ");
     $activity = $stmt3->fetchAll(\PDO::FETCH_CLASS, Activity::class);
