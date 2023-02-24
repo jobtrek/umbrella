@@ -11,11 +11,11 @@ require "../src/conn_db.php";
 require "./header.php";
 ?>
 
-    <div class=" flex flex-cols items-center justify-center bg-primary h-screen">
-        <div class="flex flex-auto justify-center w-1/2">
+    <div class="bg-primary h-screen">
+        <div class="flex flex-auto w-1/2">
 
 
-            <div class="form-control justify-center">
+            <div class="form-control justify-center ml-60 mt-40">
                 <h1 class="mb-10 font-bold leading-none tracking-tight lg:text-7xl text-white ">
                     Trouvez une <p>Activité avec </p>
                     <p class="text-secondary items-center justify-center">La Météo</p>
@@ -48,9 +48,7 @@ require "./header.php";
                 </div>
             </div>
         </div>
-        <div class=" mr-40 flex w-2/5 justify-center">
-            <video loop autoplay class="object-fill" src="./images/video%20(2).mp4" type="video/mp4"></video>
-        </div>
+
     </div>
 
 <?php require "./footer.php" ?>
