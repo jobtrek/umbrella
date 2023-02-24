@@ -7,17 +7,18 @@ $city_name = $_GET['city'] ?? null;
 if ($city_name != null) {
 
     $api_url = 'http://api.openweathermap.org/data/2.5/forecast?q=' . $city_name . '&appid=' . $api_key . '&units=metric&lang=fr';
+    $weather_data = json_decode(file_get_contents($api_url), true);
 
     if (array_key_exists('submit', $_GET)) {
         if (!empty($city_name) and $weather_data['cod'] == 200) {
             header('Location: ./weather.php?city=' . $city_name . ' ');
         } else {
-            header('Location: ./index.php');
             $error = "Le nom de la ville est invalide.";
+            var_dump($error);
+            header('Location: ./index.php');
         }
     }
 
-    $weather_data = json_decode(file_get_contents($api_url), true);
 
 // temperature + fahrenheit to celsius
 

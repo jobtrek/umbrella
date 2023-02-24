@@ -16,10 +16,15 @@ require "./header.php";
 
 
             <div class="form-control justify-center">
-                <h1 class="mb-10 font-bold leading-none tracking-tight lg:text-6xl text-white ">
+                <h1 class="mb-10 font-bold leading-none tracking-tight lg:text-7xl text-white ">
                     Trouvez une <p>Activité avec </p>
                     <p class="text-secondary items-center justify-center">La Météo</p>
                 </h1>
+
+                <h2 class="mb-10 font-bold leading-none tracking-tight text-white lg:text-2xl">Dans la barre de
+                    recherche, entrez le nom d’une ville pour voir <br> sa météo et ses activités
+                    adéquates.</h2>
+
                 <form action="index.php" method="GET">
                     <div class="input-group items-center justify-center">
                         <input type="text" name="city" id="city" placeholder="Recherche par lieu"
@@ -36,9 +41,9 @@ require "./header.php";
                     </div>
 
                 </form>
-                <div class="mt-7">
+                <div class="">
                     <p class="text-white"><?php if ($city_name != null) {
-                            echo $error;
+                            echo 'nom de la ville invalide';
                         } ?></p>
                 </div>
             </div>
