@@ -36,6 +36,11 @@ require "./header.php";
                     </div>
 
                 </form>
+                <div class="mt-7">
+                    <p class="text-white"><?php if ($city_name != null) {
+                            echo $error;
+                        } ?></p>
+                </div>
             </div>
         </div>
         <div class=" mr-40 flex w-2/5 justify-center">
