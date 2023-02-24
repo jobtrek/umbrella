@@ -10,19 +10,18 @@ require "../src/conn_db.php";
 
 require "./header.php";
 ?>
-    <div class="grid grid-cols-2 justify-items-center">
 
-        <div class="cont-part1">
-
-            <h1 class="mb-10 mt-10 ml-10 text-3xl font-bold leading-none tracking-tight text-gray-900 md:text-10xl lg:text-6xl">
-                Trouvez une <p>Activité avec </p>
-                <p class="text-secondary">La Météo</p>
-            </h1>
-            <div class="form-control">
+    <div class=" flex flex-cols items-center justify-center bg-primary h-screen">
+        <div class="flex flex-auto justify-center w-1/2">
 
 
+            <div class="form-control justify-center">
+                <h1 class="mb-10 font-bold leading-none tracking-tight lg:text-6xl text-white ">
+                    Trouvez une <p>Activité avec </p>
+                    <p class="text-secondary items-center justify-center">La Météo</p>
+                </h1>
                 <form action="index.php" method="GET">
-                    <div class="input-group ml-10">
+                    <div class="input-group items-center justify-center">
                         <input type="text" name="city" id="city" placeholder="Recherche par lieu"
                                class="input input-bordered"
                         />
@@ -39,8 +38,9 @@ require "./header.php";
                 </form>
             </div>
         </div>
-        <figure class="px-10 pt-10 mb-10 w-100">
-            <video loop autoplay src="./images/video%20(2).mp4" type="video/mp4"></video>
-        </figure>
+        <div class=" mr-40 flex w-2/5 justify-center">
+            <video loop autoplay class="object-fill" src="./images/video%20(2).mp4" type="video/mp4"></video>
+        </div>
     </div>
+
 <?php require "./footer.php" ?>

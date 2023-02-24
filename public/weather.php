@@ -12,104 +12,166 @@ require "../src/conn_api.php";
 require "../src/conn_db.php";
 
 require "./header.php";
+//Récupère l'url de la page actuel
+$actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city=' . $temperature_current_name;
 ?>
-    <div class="part-all scroll-auto bottom-0">
-        <div class="top-part grid grid-cols-2 mt-10 ">
-            <div class="card w-10/12 bg-base-100 shadow-xl ml-8 mt-10 bg-gradient-to-b ">
+    <div class="bg-gradient-to-b from-primary">
+        <div class="card-body">
+            <div class="grid grid-cols-2 justify-items-center">
+                <div class="card w-10/12 bg-base-100 shadow-xl  mt-10">
 
-                <p> <?= $affichage_icon ?> </p>
 
-                <div class="card-body ">
-                    <p class="text-xl"><strong><?= $temperature ?> ° </strong></p>
-                    <p class="text-xl"><strong><?= $temperature_current_name; ?></strong></p>
-                    <?php if ($temperature_current_weather === "Haze") {
-                        $temperature_current_weather = "Clouds";
+                    <div class="card-body gap-15 ml-5">
 
-                    }
-                    ?>
-                    <p> <?= $temperature_current_weather_description; ?> </p>
-                    <p> <?= $date; ?> </p>
+                        <p class="flex justify-end"> <?= $affichage_icon ?> </p>
+
+                        <p class="text-6xl  "><strong><?= $temperature_current_name; ?></strong></p>
+
+                        <p class="text-4xl "><strong><?= $temperature ?> ° </strong></p>
+                        <?php if ($temperature_current_weather === "Haze") {
+                            $temperature_current_weather = "Clouds";
+
+                        }
+                        ?>
+                        <p class="text-2xl capitalize"> <?= $temperature_current_weather_description; ?> </p>
+                        <p class="text-2xl"> <?= $date; ?> </p>
+                    </div>
+
+                    <div class="card-body flex text-center ">
+
+                        <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> vitesse du vent :
+                            <strong
+                                    class="flex justify-center"><?= $temperature_current_wind ?>
+                                km/h
+                            </strong>
+                        </p>
+                        <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> humidité :
+                            <strong
+                                    class="flex justify-center"><?= $temperature_current_main_humidity; ?>
+                                %
+                            </strong>
+                        </p>
+                        <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> pression :
+                            <strong class="flex justify-center"><?= $temperature_current_main_pressure; ?>
+                            </strong>
+                        </p>
+                        <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> nuages :
+                            <strong
+                                    class="flex justify-center"><?= $temperature_current_clouds; ?>%
+                            </strong>
+                        </p>
+                        <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> température max :
+                            <strong class="flex justify-center"> <?= $temperature_max; ?>
+                                °
+                            </strong>
+                        </p>
+                        <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> température min :
+                            <strong class="flex justify-center"> <?= $temperature_min; ?>
+                                °
+                            </strong>
+                        </p>
+                        <p class="capitalize text-1xl grid grid-cols-2 justify-items-center"> ressentis :
+                            <strong class="flex"> <?= $temperature_feels; ?>
+                                °
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="grid grid-cols-2 place-items-center ">
+
+                        <?php foreach ($activity as $activities) { ?>
+
+                            <div class="card-body mt-10">
+                                <div class="card w-60 h-60 bg-base-100 shadow-xl hover:bg-gradient-to-l from-indigo-200 ">
+                                    <div class="card-body">
+                                        <h2 class="grid grid-rows-3 gap-3">
+                                            <p class="flex justify-center card-title">
+                                                <strong><?= $activities->name_activity ?></strong>
+                                            </p>
+                                            <div class="flex flex-row mt-7">
+                                                <p class="text-2xl flex justify-center"><?= $activities->score ?> /
+                                                    5</p>
+                                                <p class="text-2xl flex justify-center capitalize"><?= $activities->environ_name ?></p>
+                                            </div>
+
+                                        </h2>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php } ?>
+
+                    </div>
+                    <!--  <div class="flex justify-center">
+                        <button class="btn btn-outline bg-gradient-to-b from-primary text-white"><a
+                                    href="<?php /*= $actual_link */ ?>">Trouver
+                                d'autre
+                                d'activités</a>
+                        </button>
+
+                    </div>-->
+                </div>
+                <div>
                 </div>
 
-                <div class="card-body ">
-
-                    <p> vitesse du vent <?= $temperature_current_wind ?> km/h </p>
-                    <p> humidity : <?= $temperature_current_main_humidity; ?> % </p>
-                    <p> pressure : <?= $temperature_current_main_pressure; ?> </p>
-                    <p> nuages : <?= $temperature_current_clouds; ?>%</p>
-                    <p> temp max : <?= $temperature_max; ?> ° </p>
-                    <p> temp min : <?= $temperature_min; ?> °</p>
-                    <p> ressentis : <?= $temperature_feels; ?> ° </p>
-                </div>
             </div>
-            <div class="grid grid-cols-2 mt-10 place-items-center">
 
-                <?php foreach ($activity as $activities) { ?>
+
+            <div class="grid grid-cols-5">
+                <?php for ($i = 1; $i <= 5; $i++) { ?>
 
                     <div class="card-body ">
-                        <div class="card w-72 bg-base-100 shadow-xl hover:bg-gradient-to-l from-indigo-200 ">
-                            <div class="card-body">
+
+                        <div class="card bg-base-100 shadow-xl mt-10 mb-10">
+                            <div class="card-body ">
+                                <p class="mb-5">
+                                <p class="card-title text-sm mb-10 ">Aujourd'hui</p>
+                                <p><?= $date = $weather_data["list"][$i]['dt_txt']; ?></p>
                                 <h2>
-                                    id : <?= $activities->activity_id ?> <br>
-                                    activity : <?= $activities->name_activity ?><br>
-                                    score : <?= $activities->score ?><br>
-                                    environ : <?= $activities->environ_name ?><br>
+                                    <p> <?php $temperature_current_weather_icon = $weather_data["list"][$i]['weather'][0]['icon']; ?> </p>
+                                    <p class="flex justify-center"> <?= $affichage_icon = "<img src='http://openweathermap.org/img/wn/"
+                                            . $temperature_current_weather_icon . "@2x.png'/>"; ?>  </p>
+                                    <p class="flex justify-center"> <?= round($weather_data["list"][$i]['main']['temp']); ?>
+                                        °</p>
 
                                 </h2>
-
                             </div>
                         </div>
                     </div>
 
                 <?php } ?>
+            </div>
+            <div class="grid grid-cols-5 gap-18 justify-items-center mb-10">
 
+                <?php for ($i = 1; $i <= 39; $i++) {
+                    $dateHour = $weather_data["list"][$i]['dt_txt'];
+                    $hour = explode(" ", $dateHour);
+
+                    if ($hour[1] === "15:00:00") {
+                        ?>
+                        <div class="mb-10">
+                            <div class="card bg-base-100 shadow-xl ">
+                                <div class="card-body bg-base-100 ">
+                                    <h2 class="flex flex-row justify-center w-40 gap-10x">
+                                        <p class="card-title text-sm"> <?= $date = $weather_data["list"][$i]['dt_txt']; ?></p>
+
+                                        <p> <?php $temperature_current_weather_icon = $weather_data["list"][$i]['weather'][0]['icon']; ?> </p>
+                                        <p> <?= $affichage_icon = "<img src='http://openweathermap.org/img/wn/"
+                                                . $temperature_current_weather_icon . "@2x.png'/>"; ?> </p>
+
+                                    </h2>
+                                    <p class="flex justify-center"> <?= round($weather_data["list"][$i]['main']['temp']); ?>
+                                        °</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    <?php }
+                } ?>
             </div>
         </div>
-
-        <div class="grid grid-cols-5">
-            <?php for ($i = 1; $i <= 5; $i++) { ?>
-
-                <div class="card-body ">
-                    <div class="card  bg-base-100 shadow-xl mt-10 mb-10 ">
-                        <div class="card-body w-60">
-                            <h2>
-                                <p> <?php $temperature_current_weather_icon = $weather_data["list"][$i]['weather'][0]['icon']; ?> </p>
-                                <p> <?= $affichage_icon = "<img src='http://openweathermap.org/img/wn/"
-                                        . $temperature_current_weather_icon . "@2x.png'/>"; ?>  </p>
-                                <p> <?= round($weather_data["list"][$i]['main']['temp']); ?> °</p>
-                                <p> <?= $date = $weather_data["list"][$i]['dt_txt']; ?></p>
-
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-
-            <?php } ?>
-        </div>
-
-        <?php for ($i = 1; $i <= 39; $i++) {
-            $dateHour = $weather_data["list"][$i]['dt_txt'];
-            $hour = explode(" ", $dateHour);
-
-            if ($hour[1] === "15:00:00") {
-                ?>
-                <div class="card-body ">
-                    <div class="card w-96 bg-base-100 shadow-xl ">
-                        <div class="card-body">
-                            <h2>
-                                <p> <?php $temperature_current_weather_icon = $weather_data["list"][$i]['weather'][0]['icon']; ?> </p>
-                                <p> <?= $affichage_icon = "<img src='http://openweathermap.org/img/wn/"
-                                        . $temperature_current_weather_icon . "@2x.png'/>"; ?> </p>
-                                <p> <?= round($weather_data["list"][$i]['main']['temp']); ?> °</p>
-                                <p> <?= $date = $weather_data["list"][$i]['dt_txt']; ?></p>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            <?php }
-        } ?>
-
-        <br><br>
-
     </div>
+
 <?php require "./footer.php" ?>
