@@ -11,22 +11,21 @@ require "../src/conn_db.php";
 require "./header.php";
 ?>
 
-    <div class=" flex flex-cols items-center justify-center bg-primary h-screen">
-        <div class="flex flex-auto justify-center w-1/2">
+    <div class="bg-primary h-screen">
+        <div class="flex flex-auto">
 
-
-            <div class="form-control justify-center">
-                <h1 class="mb-10 font-bold leading-none tracking-tight lg:text-7xl text-white ">
+            <div class="form-control justify-center ml-72 mt-32">
+                <h1 class="mb-10 font-bold leading-none tracking-tight lg:text-8xl text-white ">
                     Trouvez une <p>Activité avec </p>
-                    <p class="text-secondary items-center justify-center">La Météo</p>
+                    <p class="text-secondary items-center justify-center">La Météo </p>
                 </h1>
 
-                <h2 class="mb-10 font-bold leading-none tracking-tight text-white lg:text-2xl">Dans la barre de
+                <h2 class="mb-10 font-bold leading-none tracking-tight text-white lg:text-3xl">Dans la barre de
                     recherche, entrez le nom d’une ville pour voir <br> sa météo et ses activités
                     adéquates.</h2>
 
                 <form action="index.php" method="GET">
-                    <div class="input-group items-center justify-center">
+                    <div class="input-group items-center">
                         <input type="text" name="city" id="city" placeholder="Recherche par lieu"
                                class="input input-bordered"
                         />
@@ -47,9 +46,6 @@ require "./header.php";
                         } ?></p>
                 </div>
             </div>
-        </div>
-        <div class=" mr-40 flex w-2/5 justify-center">
-            <video loop autoplay class="object-fill" src="./images/video%20(2).mp4" type="video/mp4"></video>
         </div>
     </div>
 

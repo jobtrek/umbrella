@@ -25,16 +25,26 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
 
                         <p class="flex justify-end"> <?= $affichage_icon ?> </p>
 
-                        <p class="text-6xl  "><strong><?= $temperature_current_name; ?></strong></p>
+                        <div class="flex flex-row">
+                            <p class="text-6xl  "><strong><?= $temperature_current_name; ?></strong></p>
+                            <?php
+                            $date_hour2 = explode(" ", $date); ?>
+                            <p class="text-4xl flex justify-end mt-4 mr-5"><strong> <?= $date_hour2[0]; ?></strong></p>
+                        </div>
 
                         <p class="text-4xl "><strong><?= $temperature ?> ° </strong></p>
+
                         <?php if ($temperature_current_weather === "Haze") {
                             $temperature_current_weather = "Clouds";
-
                         }
                         ?>
+
                         <p class="text-2xl capitalize"> <?= $temperature_current_weather_description; ?> </p>
-                        <p class="text-2xl"> <?= $date; ?> </p>
+                        <?php
+                        $date_hour1 = explode(" ", $date); ?>
+                        <div class="flex flex-row ">
+                            <p class="text-2xl"><?= $date_hour1[1] ?> </p>
+                        </div>
                     </div>
 
                     <div class="card-body flex text-center ">
@@ -106,13 +116,13 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
 
                     <div class="card-body ">
 
-                        <div class="card bg-base-100 shadow-xl mt-10 mb-10">
+                        <div class="card bg-base-100 shadow-xl mt-10 mb-10 flex flex-col">
                             <div class="card-body ">
-                                <p class="mb-5">
+
                                 <p class="card-title text-sm ">Aujourd'hui</p>
                                 <?php $datetime = $weather_data["list"][$i]['dt_txt'];
                                 $date_hour = explode(" ", $datetime); ?>
-                                <p class="mb-10"><?= $date_hour[1] ?> </p>
+                                <p><?= $date_hour[1] ?> </p>
                                 <p> <?= $date_hour[0]; ?></p>
                                 <h2>
                                     <p> <?php $temperature_current_weather_icon = $weather_data["list"][$i]['weather'][0]['icon']; ?> </p>
