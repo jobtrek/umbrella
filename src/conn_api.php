@@ -11,7 +11,7 @@ if ($city_name != null) {
 
     if (array_key_exists('submit', $_GET)) {
         if (!empty($city_name) and $weather_data['cod'] == 200) {
-            header('Location: ./weather.php?city=' . $city_name . ' ');
+            header('Location: ./weather.php?city=' . $city_name);
         } else {
             $error = "Le nom de la ville est invalide.";
             var_dump($error);
