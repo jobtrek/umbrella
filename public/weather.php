@@ -110,7 +110,7 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
 
             </div>
 
-
+            <h2 class="text-center text-2xl mt-10"><strong>Prochaines Heures</strong></h2>
             <div class="grid grid-cols-5">
                 <?php for ($i = 1; $i <= 5; $i++) { ?>
 
@@ -138,6 +138,9 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
 
                 <?php } ?>
             </div>
+
+            <h2 class="text-center mb-10 text-2xl"><strong>Prochains jours</strong></h2>
+
             <div class="flex flex-row justify-center space-x-28 mb-10">
 
                 <?php for ($i = 1; $i <= 39; $i++) {
