@@ -16,6 +16,7 @@ if ($city_name != null) {
             $error = "Le nom de la ville est invalide.";
             var_dump($error);
             header('Location: ./index.php');
+            
         }
     }
 
