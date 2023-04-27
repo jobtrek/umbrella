@@ -12,14 +12,13 @@ require "../src/conn_api.php";
 require "../src/conn_db.php";
 
 require "./header.php";
-//Récupère l'url de la page actuel
-$actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city=' . $temperature_current_name;
+
 ?>
     <div class="bg-gradient-to-b from-primary">
         <div class="card-body">
             <div class="grid grid-cols-2 justify-items-center">
                 <div class="card w-10/12 bg-base-100 shadow-xl  mt-10">
-
+                    c
 
                     <div class="card-body gap-15 ml-5">
 
@@ -75,7 +74,8 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
                         <?php foreach ($activity as $activities) { ?>
 
                             <div class="card-body mt-10">
-                                <div class="card w-60 h-60 bg-base-100 shadow-xl hover:bg-gradient-to-l from-indigo-200 ">
+                                <div
+                                    class="card w-60 h-60 bg-base-100 shadow-xl hover:bg-gradient-to-l from-indigo-200 ">
                                     <div class="card-body">
                                         <h2 class="grid grid-rows-3 gap-3">
                                             <p class="flex justify-center card-title">
@@ -96,14 +96,7 @@ $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . '?city
                         <?php } ?>
 
                     </div>
-                    <!--  <div class="flex justify-center">
-                        <button class="btn btn-outline bg-gradient-to-b from-primary text-white"><a
-                                    href="<?php /*= $actual_link */ ?>">Trouver
-                                d'autre
-                                d'activités</a>
-                        </button>
 
-                    </div>-->
                 </div>
                 <div>
                 </div>
