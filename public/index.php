@@ -40,11 +40,11 @@ require "./header.php";
                     </div>
 
                 </form>
-                <div class="">
-                    <p class="text-white"><?php if ($city_name != null) {
+                <!--    <div class="">
+                    <p class="text-white"><?php /*if ($city_name != null) {
                             echo 'nom de la ville invalide';
-                        } ?></p>
-                </div>
+                        } */ ?></p>
+                </div>-->
             </div>
         </div>
     </div>
