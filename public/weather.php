@@ -1,7 +1,5 @@
 <?php
 
-use Umbrella\Admin;
-
 require "../vendor/autoload.php";
 
 //pour la key of API

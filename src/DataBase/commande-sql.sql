@@ -218,7 +218,7 @@ INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (5
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (1, 15, 5);
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (2, 15, 5);
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (3, 15, 5);
-INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (3, 15, 5);
+
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (5, 15, 2);
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (1, 16, 1);
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (2, 16, 1);
@@ -345,11 +345,6 @@ INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (2
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (3, 42, 3);
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (4, 42, 1);
 INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (5, 42, 5);
-INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (1, 43, 1);
-INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (2, 43, 1);
-INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (3, 43, 1);
-INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (4, 43, 1);
-INSERT INTO public.t_activity_weather (weather_id, activity_id, score) VALUES (5, 43, 5);
 
 
 
@@ -417,9 +412,6 @@ INSERT INTO public.t_activity_temperature (temp_id, activity_id) VALUES (1, 41);
 INSERT INTO public.t_activity_temperature (temp_id, activity_id) VALUES (3, 41);
 INSERT INTO public.t_activity_temperature (temp_id, activity_id) VALUES (1, 42);
 INSERT INTO public.t_activity_temperature (temp_id, activity_id) VALUES (3, 42);
-INSERT INTO public.t_activity_temperature (temp_id, activity_id) VALUES (1, 43);
-INSERT INTO public.t_activity_temperature (temp_id, activity_id) VALUES (3, 43);
-
 
 
 INSERT INTO public.t_activity_season (season_id, activity_id) VALUES (1, 1);
@@ -534,7 +526,6 @@ INSERT INTO public.t_activity_season (season_id, activity_id) VALUES (3, 41);
 INSERT INTO public.t_activity_season (season_id, activity_id) VALUES (1, 42);
 INSERT INTO public.t_activity_season (season_id, activity_id) VALUES (2, 42);
 INSERT INTO public.t_activity_season (season_id, activity_id) VALUES (3, 42);
-INSERT INTO public.t_activity_season (season_id, activity_id) VALUES (2, 43);
 INSERT INTO public.t_activity_environ (environ_id, activity_id) VALUES (1, 1);
 INSERT INTO public.t_activity_environ (environ_id, activity_id) VALUES (2, 1);
 INSERT INTO public.t_activity_environ (environ_id, activity_id) VALUES (2, 2);
@@ -577,4 +568,3 @@ INSERT INTO public.t_activity_environ (environ_id, activity_id) VALUES (2, 38);
 INSERT INTO public.t_activity_environ (environ_id, activity_id) VALUES (1, 39);
 INSERT INTO public.t_activity_environ (environ_id, activity_id) VALUES (2, 41);
 INSERT INTO public.t_activity_environ (environ_id, activity_id) VALUES (2, 42);
-INSERT INTO public.t_activity_environ (environ_id, activity_id) VALUES (2, 43);

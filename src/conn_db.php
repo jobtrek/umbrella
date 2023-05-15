@@ -2,6 +2,7 @@
 
 namespace Umbrella\Admin;
 
+
 require "../vendor/autoload.php";
 
 require "../src/conn_api.php";
@@ -9,11 +10,11 @@ require "../src/conn_api.php";
 if ($city_name != null) {
 
 
-    $host = "localhost";
+    $host = "127.0.0.1";
     $port = "5432";
     $db = "umbrella";
-    $user = "postgres";
-    $pass = "postgres";
+    $user = "umbrella";
+    $pass = "umbrella";
 
 
     $con = new \PDO("pgsql:host=$host;port=$port;dbname=$db;user=$user;password=$pass");
@@ -36,7 +37,8 @@ AND score > 3
    name_activity,random()
 LIMIT 6  
 ");
-    $activity = $stmt3->fetchAll(\PDO::FETCH_CLASS, Activity::class);
+    $activity = $stmt3->fetch(\PDO::FETCH_ASSOC);
+    print_r($activity);
 }
 
 

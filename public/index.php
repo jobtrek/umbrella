@@ -1,5 +1,7 @@
 <?php
+
 require "../vendor/autoload.php";
+//phpinfo(INFO_MODULES);
 
 //pour la key of API
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../");
@@ -37,6 +39,7 @@ require "./header.php";
                                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                             </svg>
                         </button>
+
                     </div>
 
                 </form>

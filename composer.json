@@ -1,26 +1,20 @@
 {
-  "name": "umbrella/admin",
-  "autoload": {
-    "psr-4": {
-      "Umbrella\\Admin\\": "src/"
-    }
-  },
-  "authors": [
-    {
-      "name": "nicolasloison13",
-      "email": "nicolasloison13@icloud.com",
-      "role": "Developer"
+    "name": "mds/umbrella",
+    "autoload": {
+        "psr-4": {
+            "Mds\\Umbrella\\": "src/"
+        }
     },
-    {
-      "name": "maudelin.delescaut",
-      "email": "maudelin.delescaut@jobtrek.ch",
-      "role": "Developer"
+    "authors": [
+        {
+            "name": "maudelinDS",
+            "email": "maudelin.delescaut@jobtrek.ch"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "ext-pdo": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-geoip": "*"
     }
-  ],
-  "require": {
-    "vlucas/phpdotenv": "^5.5",
-    "ext-pdo": "*",
-    "guzzlehttp/guzzle": "^7.0",
-    "ext-geoip": "*"
-  }
 }
